@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ru" id="htmlRoot">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fatima Sherpeeva — Luxury UGC Creator</title>
+<meta name="description" content="Premium UGC Creator portfolio for beauty, lifestyle, food and digital brands." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+<meta property="og:title" content="Fatima Sherpeeva — Luxury UGC Creator" />
+<meta property="og:description" content="Premium UGC Creator portfolio for beauty, lifestyle, food and digital brands." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://www.fatimasherpeeva.ru/images/og-image.jpg" />
+<meta property="og:url" content="https://www.fatimasherpeeva.ru" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://www.fatimasherpeeva.ru" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="#top" class="nav-logo">FS</a>
+  <div class="nav-links">
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#video-portfolio" data-i18n="nav.portfolio">Portfolio</a>
+    <a href="#services" data-i18n="nav.services">Services</a>
+    <a href="#contact" data-i18n="nav.contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-switch" id="langSwitch" aria-label="Язык / Language">
+      <button type="button" class="lang-btn active" data-lang="ru">RU</button>
+      <span class="lang-sep">/</span>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
+    <a href="#contact" class="btn btn-primary btn-nav" data-i18n="nav.cta">Work with me</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" data-i18n="nav.about">About</a>
+  <a href="#video-portfolio" data-i18n="nav.portfolio">Portfolio</a>
+  <a href="#services" data-i18n="nav.services">Services</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <div class="lang-switch lang-switch-mobile">
+    <button type="button" class="lang-btn active" data-lang="ru">RU</button>
+    <span class="lang-sep">/</span>
+    <button type="button" class="lang-btn" data-lang="en">EN</button>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <span class="hero-eyebrow" data-i18n="hero.eyebrow">Luxury UGC Creator</span>
+      <h1>Fatima<br>Sherpeeva</h1>
+      <p class="hero-tagline" data-i18n="hero.tagline">Content that feels premium</p>
+      <p class="hero-desc" data-i18n="hero.desc">Создаю эстетичный UGC-контент для брендов, который продаёт и вызывает эмоции.</p>
+      <p class="hero-tags">
+        <span data-i18n="tags.beauty">Beauty</span> / <span data-i18n="tags.lifestyle">Lifestyle</span> / <span data-i18n="tags.food">Food</span> / <span data-i18n="tags.apps">Apps</span> / <span data-i18n="tags.travel">Travel</span>
+      </p>
+      <a href="#contact" class="btn btn-primary" data-i18n="nav.cta">Work with me</a>
+    </div>
+    <div class="hero-media ph-hero reveal" data-slot="hero">
+      <span class="ph-label">фото — замените hero.jpg</span>
+    </div>
+  </div>
+</header>
+
+<section id="video-portfolio">
+  <div class="container">
+    <div class="section-head-row reveal">
+      <div>
+        <span class="eyebrow" data-i18n="video.eyebrow">Video Portfolio</span>
+        <h2 class="section-title" data-i18n="video.title">Selected Works</h2>
+      </div>
+      <div class="filter-pills" id="filterPills">
+        <button class="pill active" data-i18n="filter.all">All</button>
+        <button class="pill" data-i18n="tags.beauty">Beauty</button>
+        <button class="pill" data-i18n="tags.lifestyle">Lifestyle</button>
+        <button class="pill" data-i18n="tags.food">Food</button>
+        <button class="pill" data-i18n="tags.apps">Apps</button>
+        <button class="pill" data-i18n="tags.travel">Travel</button>
+      </div>
+    </div>
+    <div class="video-grid">
+      <div class="video-card ph-v1 reveal" data-video="videos/video1.mp4" data-slot="video1">
+        <span class="video-play">▶</span>
+        <span class="video-label">Video 01 — <span data-i18n="video.replace">замените video1.mp4</span></span>
+      </div>
+      <div class="video-card ph-v2 reveal" data-video="videos/video2.mp4" data-slot="video2">
+        <span class="video-play">▶</span>
+        <span class="video-label">Video 02 — <span data-i18n="video.replace">замените video2.mp4</span></span>
+      </div>
+      <div class="video-card ph-v3 reveal" data-video="videos/video3.mp4" data-slot="video3">
+        <span class="video-play">▶</span>
+        <span class="video-label">Video 03 — <span data-i18n="video.replace">замените video3.mp4</span></span>
+      </div>
+    </div>
+    <div class="section-cta">
+      <a href="#" class="btn btn-outline" data-i18n="video.viewAll">View all videos</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-media ph-about reveal" data-slot="about">
+      <span class="ph-label">фото — замените about.jpg</span>
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow" data-i18n="about.eyebrow">About me</span>
+      <h2 class="section-title" data-i18n="about.title">I create content <em data-i18n="about.titleEm">that sells.</em></h2>
+      <p data-i18n="about.p1">Моя цель — передать атмосферу вашего бренда через визуал и сторителлинг. Я помогаю брендам выделиться, выстроить доверие и увеличить продажи с помощью эстетичного UGC-контента.</p>
+      <div class="about-features">
+        <div class="about-feature">
+          <span class="af-icon">✦</span>
+          <span data-i18n="about.f1">Эстетика и внимание к деталям</span>
+        </div>
+        <div class="about-feature">
+          <span class="af-icon">✦</span>
+          <span data-i18n="about.f2">Натуральный и живой контент</span>
+        </div>
+        <div class="about-feature">
+          <span class="af-icon">✦</span>
+          <span data-i18n="about.f3">Быстрые сроки и стабильное качество</span>
+        </div>
+        <div class="about-feature">
+          <span class="af-icon">✦</span>
+          <span data-i18n="about.f4">Контент, который выглядит дорого</span>
+        </div>
+      </div>
+      <div class="about-signature">Fatima Sherpeeva</div>
+    </div>
+    <div class="services-col" id="services">
+      <span class="eyebrow" data-i18n="services.eyebrow">Services</span>
+      <div class="services-list">
+        <div class="service-card reveal">
+          <div class="sc-left">
+            <span class="sc-icon">▶</span>
+            <div>
+              <div class="service-name">UGC Video</div>
+              <p class="service-desc" data-i18n="services.s1desc">Эстетичные видео, которые продают.</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="sc-left">
+            <span class="sc-icon">◈</span>
+            <div>
+              <div class="service-name">Product Photography</div>
+              <p class="service-desc" data-i18n="services.s2desc">Фото, подчёркивающие ценность продукта.</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="sc-left">
+            <span class="sc-icon">◐</span>
+            <div>
+              <div class="service-name">Reels / TikTok Package</div>
+              <p class="service-desc" data-i18n="services.s3desc">Комплекты коротких видео для соцсетей.</p>
+            </div>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="sc-left">
+            <span class="sc-icon">◆</span>
+            <div>
+              <div class="service-name">Monthly Content Package</div>
+              <p class="service-desc" data-i18n="services.s4desc">Регулярный контент для роста бренда.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-block" data-i18n="services.cta">Discuss your project</a>
+    </div>
+  </div>
+</section>
+
+<section id="photo-portfolio">
+  <div class="container">
+    <div class="section-head-row reveal">
+      <div>
+        <span class="eyebrow" data-i18n="photo.eyebrow">Photo Portfolio</span>
+        <h2 class="section-title" data-i18n="photo.title">Aesthetic Gallery</h2>
+      </div>
+      <a href="#" class="view-all-link" data-i18n="photo.viewAll">View all photos</a>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-card ph-p1 reveal" data-slot="photo1">
+        <span class="ph-label">фото — замените photo1.jpg</span>
+      </div>
+      <div class="photo-card ph-p2 reveal" data-slot="photo2">
+        <span class="ph-label">фото — замените photo2.jpg</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="container">
+    <p class="brands-label" data-i18n="footer.brandsLabel">Brands I would love to create for</p>
+    <div class="brands-row">
+      <span class="brand-slot">[Brand]</span>
+      <span class="brand-slot">[Brand]</span>
+      <h2 class="footer-title" data-i18n="footer.title">Let's work <em data-i18n="footer.titleEm">together</em></h2>
+      <span class="brand-slot">[Brand]</span>
+      <span class="brand-slot">[Brand]</span>
+    </div>
+    <p class="footer-sub" data-i18n="footer.sub">Create something beautiful</p>
+
+    <div class="contact-grid" id="contactGrid">
+    </div>
+
+    <div class="footer-bottom">
+      <span data-i18n="footer.copy">© 2026 Fatima Sherpeeva</span>
+      <span data-i18n="hero.eyebrow">Luxury UGC Creator</span>
+      <a href="/admin.html" style="opacity:0.35;">Админ-панель</a>
+    </div>
+  </div>
+</footer>
+
+<script src="settings.js"></script>
+<script src="i18n.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

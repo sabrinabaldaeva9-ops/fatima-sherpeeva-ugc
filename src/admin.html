@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Админ-панель — Fatima Sherpeeva</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4EEE3;--ink:#2B2420;--ink-soft:rgba(43,36,32,0.6);
+    --accent:#8A6F58;--accent-dark:#6E5744;--card:#FBF7EF;--border:rgba(43,36,32,0.16);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Manrope',sans-serif;padding:24px;}
+  h1{font-family:'Cormorant Garamond',serif;font-size:30px;margin:0 0 6px;}
+  p.sub{color:var(--ink-soft);font-size:14px;margin:0 0 28px;}
+  .lock{max-width:340px;margin:80px auto;text-align:center;}
+  .lock input{
+    width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--border);
+    background:var(--card);color:var(--ink);font-size:15px;margin:16px 0;
+  }
+  button{
+    font-family:inherit;cursor:pointer;background:var(--accent-dark);color:#FBF7EF;
+    border:none;padding:12px 22px;border-radius:100px;font-size:13px;font-weight:700;
+    letter-spacing:0.04em;text-transform:uppercase;
+  }
+  button:hover{background:var(--ink);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;max-width:1100px;}
+  .slot{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .slot h3{margin:0;font-size:14px;font-family:'Manrope',sans-serif;}
+  .slot .filename{font-size:11px;color:var(--ink-soft);}
+  .preview{
+    aspect-ratio:1/1;border-radius:10px;background:repeating-linear-gradient(45deg,#eee,#eee 8px,#f7f7f7 8px,#f7f7f7 16px);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;
+  }
+  .preview img,.preview video{width:100%;height:100%;object-fit:cover;}
+  .preview .empty{font-size:11px;color:var(--ink-soft);text-align:center;padding:8px;}
+  .drop{
+    border:1.5px dashed var(--border);border-radius:10px;padding:14px;text-align:center;
+    font-size:12px;color:var(--ink-soft);cursor:pointer;
+  }
+  .drop.dragover{border-color:var(--accent-dark);background:rgba(138,111,88,0.08);}
+  .status{font-size:11.5px;min-height:16px;}
+  .status.ok{color:#4a7a4a;}
+  .status.err{color:#a9432f;}
+  .status.busy{color:var(--ink-soft);}
+  input[type=file]{display:none;}
+  .top-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:24px;}
+  a.back{font-size:13px;color:var(--accent-dark);}
+  .settings-block{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:24px;max-width:1100px;margin-top:32px;
+  }
+  .settings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:20px 0;}
+  .settings-grid label{display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--ink-soft);}
+  .settings-grid input{
+    padding:12px 14px;border-radius:10px;border:1px solid var(--border);
+    background:var(--bg);color:var(--ink);font-size:14px;
+  }
+</style>
+</head>
+<body>
+
+<div id="lockScreen" class="lock">
+  <h1>Админ-панель</h1>
+  <p class="sub">Введите пароль, чтобы загружать фото и видео</p>
+  <input type="password" id="passInput" placeholder="Пароль" />
+  <div><button id="unlockBtn" style="width:100%;padding:14px;">Войти</button></div>
+  <div class="status err" id="lockStatus"></div>
+</div>
+
+<div id="panel" style="display:none;">
+  <div class="top-row">
+    <div>
+      <h1>Фото и видео сайта</h1>
+      <p class="sub">Загрузите файл в нужное окно — сайт обновится сам за несколько секунд</p>
+    </div>
+    <a class="back" href="/">← На сайт</a>
+  </div>
+  <div class="grid" id="slotsGrid"></div>
+
+  <div class="settings-block" id="settingsBlock">
+    <h1>Контакты</h1>
+    <p class="sub">Заполните и нажмите «Сохранить» — сайт обновится сразу</p>
+    <div class="settings-grid">
+      <label>Instagram (ссылка или @ник)<input type="text" id="s-instagram" placeholder="https://instagram.com/..."></label>
+      <label>Telegram (ссылка или @ник)<input type="text" id="s-telegram" placeholder="https://t.me/..."></label>
+      <label>WhatsApp (ссылка или номер)<input type="text" id="s-whatsapp" placeholder="https://wa.me/79991234567"></label>
+      <label>Email<input type="text" id="s-email" placeholder="hello@fatimasherpeeva.ru"></label>
+    </div>
+    <button id="saveSettingsBtn">Сохранить</button>
+    <div class="status" id="settingsStatus" style="margin-top:10px;"></div>
+  </div>
+</div>
+
+<script>
+const SLOTS = [
+  { key: 'hero', label: 'Hero (главный экран)', accept: 'image/*' },
+  { key: 'about', label: 'О себе', accept: 'image/*' },
+  { key: 'photo1', label: 'Фото 1', accept: 'image/*' },
+  { key: 'photo2', label: 'Фото 2', accept: 'image/*' },
+  { key: 'video1', label: 'Видео 1', accept: 'video/*' },
+  { key: 'video2', label: 'Видео 2', accept: 'video/*' },
+  { key: 'video3', label: 'Видео 3', accept: 'video/*' },
+];
+
+const EXT_MIME = {
+  jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp',
+  heic: 'image/heic', heif: 'image/heif', gif: 'image/gif', avif: 'image/avif',
+  mp4: 'video/mp4', mov: 'video/quicktime', m4v: 'video/x-m4v', webm: 'video/webm',
+};
+
+function guessContentType(filename, slotKey) {
+  const ext = (String(filename).split('.').pop() || '').toLowerCase();
+  if (EXT_MIME[ext]) return EXT_MIME[ext];
+  return slotKey.startsWith('video') ? 'video/mp4' : 'image/jpeg';
+}
+
+let passcode = '';
+
+const lockScreen = document.getElementById('lockScreen');
+const panel = document.getElementById('panel');
+const passInput = document.getElementById('passInput');
+const unlockBtn = document.getElementById('unlockBtn');
+const lockStatus = document.getElementById('lockStatus');
+const slotsGrid = document.getElementById('slotsGrid');
+
+function buildSlots() {
+  slotsGrid.innerHTML = '';
+  SLOTS.forEach(slot => {
+    const el = document.createElement('div');
+    el.className = 'slot';
+    el.innerHTML = `
+      <h3>${slot.label}</h3>
+      <div class="filename">slot: ${slot.key}</div>
+      <div class="preview" id="preview-${slot.key}"><span class="empty">пока не загружено</span></div>
+      <div class="drop" id="drop-${slot.key}">Перетащите файл сюда или нажмите, чтобы выбрать</div>
+      <input type="file" id="input-${slot.key}" accept="${slot.accept}" />
+      <div class="status" id="status-${slot.key}"></div>
+    `;
+    slotsGrid.appendChild(el);
+    const drop = el.querySelector(`#drop-${slot.key}`);
+    const input = el.querySelector(`#input-${slot.key}`);
+    drop.addEventListener('click', () => input.click());
+    input.addEventListener('change', () => {
+      if (input.files[0]) handleUpload(slot.key, input.files[0]);
+    });
+    drop.addEventListener('dragover', e => { e.preventDefault(); drop.classList.add('dragover'); });
+    drop.addEventListener('dragleave', () => drop.classList.remove('dragover'));
+    drop.addEventListener('drop', e => {
+      e.preventDefault();
+      drop.classList.remove('dragover');
+      if (e.dataTransfer.files[0]) handleUpload(slot.key, e.dataTransfer.files[0]);
+    });
+  });
+}
+
+async function loadCurrentMedia() {
+  try {
+    const res = await fetch('/api/media');
+    const data = await res.json();
+    SLOTS.forEach(slot => {
+      const url = data.media && data.media[slot.key];
+      const preview = document.getElementById(`preview-${slot.key}`);
+      if (!url) return;
+      preview.innerHTML = slot.key.startsWith('video')
+        ? `<video src="${url}" muted loop autoplay playsinline></video>`
+        : `<img src="${url}" alt="" />`;
+    });
+  } catch (e) {}
+}
+
+async function requestToken(slotKey, file) {
+  const params = new URLSearchParams({ slot: slotKey, passcode: passcode, filename: file.name || '' });
+  const tRes = await fetch('/api/token?' + params.toString(), { method: 'POST' });
+  const tText = await tRes.text();
+  let tData = {};
+  try { tData = JSON.parse(tText); } catch (e) {}
+  if (!tRes.ok || !tData.clientToken) throw new Error(tData.error || ('сервер ответил ' + tRes.status));
+  return tData;
+}
+
+async function uploadToBlob(tData, file, safeType, forceNoMultipart) {
+  const mod = await import('https://esm.sh/@vercel/blob@0.27.1/client');
+  return mod.put(tData.pathname, file, {
+    access: 'public',
+    token: tData.clientToken,
+    contentType: safeType,
+    multipart: forceNoMultipart ? false : file.size > 20 * 1024 * 1024,
+  });
+}
+
+async function handleUpload(slotKey, file) {
+  const statusEl = document.getElementById(`status-${slotKey}`);
+  statusEl.className = 'status busy';
+  statusEl.textContent = 'Подготовка…';
+
+  const safeType = guessContentType(file.name || '', slotKey);
+
+  let tData;
+  try {
+    tData = await requestToken(slotKey, file);
+  } catch (err) {
+    statusEl.className = 'status err';
+    statusEl.textContent = 'Ошибка получения токена: ' + (err.message || 'неизвестная ошибка');
+    return;
+  }
+
+  statusEl.textContent = 'Загрузка файла… (большие видео — до пары минут)';
+
+  let blob;
+  try {
+    blob = await uploadToBlob(tData, file, safeType, false);
+  } catch (err1) {
+    statusEl.textContent = 'Не получилось с первого раза, пробую ещё раз…';
+    try {
+      blob = await uploadToBlob(tData, file, safeType, true);
+    } catch (err2) {
+      const sizeMb = (file.size / 1024 / 1024).toFixed(1);
+      statusEl.className = 'status err';
+      statusEl.textContent = `Ошибка загрузки (${file.name || 'файл'}, ${sizeMb} МБ, ${safeType}): ${err2.message || err2}`;
+      return;
+    }
+  }
+
+  statusEl.className = 'status ok';
+  statusEl.textContent = 'Готово ✓';
+  const preview = document.getElementById(`preview-${slotKey}`);
+  const url = blob.url + '?v=' + Date.now();
+  preview.innerHTML = slotKey.startsWith('video')
+    ? `<video src="${url}" muted loop autoplay playsinline></video>`
+    : `<img src="${url}" alt="" />`;
+}
+
+unlockBtn.addEventListener('click', () => {
+  passcode = passInput.value;
+  if (!passcode) {
+    lockStatus.textContent = 'Введите пароль';
+    return;
+  }
+  lockScreen.style.display = 'none';
+  panel.style.display = 'block';
+  buildSlots();
+  loadCurrentMedia();
+  loadSettings();
+});
+passInput.addEventListener('keydown', e => { if (e.key === 'Enter') unlockBtn.click(); });
+
+const SETTINGS_FIELDS = ['instagram', 'telegram', 'whatsapp', 'email'];
+
+async function loadSettings() {
+  try {
+    const res = await fetch('/api/settings');
+    const data = await res.json();
+    SETTINGS_FIELDS.forEach(f => {
+      const el = document.getElementById('s-' + f);
+      if (el && data[f]) el.value = data[f];
+    });
+  } catch (e) {}
+}
+
+document.getElementById('saveSettingsBtn').addEventListener('click', async () => {
+  const statusEl = document.getElementById('settingsStatus');
+  statusEl.className = 'status busy';
+  statusEl.textContent = 'Сохранение…';
+  const payload = {};
+  SETTINGS_FIELDS.forEach(f => { payload[f] = document.getElementById('s-' + f).value.trim(); });
+  try {
+    const res = await fetch('/api/settings?passcode=' + encodeURIComponent(passcode), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Не удалось сохранить');
+    statusEl.className = 'status ok';
+    statusEl.textContent = 'Сохранено ✓';
+  } catch (err) {
+    statusEl.className = 'status err';
+    statusEl.textContent = 'Ошибка: ' + (err.message || 'не удалось сохранить');
+  }
+});
+</script>
+</body>
+</html>
