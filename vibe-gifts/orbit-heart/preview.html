@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibe Gifts · Orbit Heart</title>
+<style>
+  :root { --bg:#0b0a12; --ink:#f7f3ff; --mute:#9d95b8; --gold:#e6cc98; }
+  * { box-sizing:border-box; margin:0 }
+  html,body { height:100%; background:var(--bg); color:var(--ink); font-family:-apple-system,"SF Pro Display",Inter,system-ui,sans-serif }
+  main { min-height:100%; display:grid; place-items:center; padding:24px 16px; }
+  .stage { width:min(92vw,78vh,760px); aspect-ratio:1; position:relative; border-radius:32px; overflow:hidden;
+    background:radial-gradient(60% 60% at 50% 46%, #2a2342 0%, #15111f 55%, #0b0a12 100%); box-shadow:0 40px 120px #000a, inset 0 0 0 1px #ffffff12 }
+  canvas { width:100%; height:100%; display:block; background:transparent }
+  .meta { position:absolute; left:0; right:0; bottom:0; padding:22px 26px; display:flex; justify-content:space-between; align-items:end;
+    background:linear-gradient(to top,#0b0a12cc,#0b0a1200) }
+  .meta b { display:block; font-size:20px; letter-spacing:.02em; font-weight:600 }
+  .meta span { font-size:13px; color:var(--mute) }
+  .tag { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); border:1px solid #e6cc9855; padding:6px 10px; border-radius:99px }
+</style>
+</head>
+<body>
+<main>
+  <div class="stage">
+    <canvas id="c" width="1024" height="1024"></canvas>
+    <div class="meta"><div><b>Orbit Heart</b><span>01 · Орбитальное сердце — «Мы на одной орбите»</span></div><div class="tag">Common · 25 ★</div></div>
+  </div>
+</main>
+<script type="importmap">{"imports":{"three":"../vendor/three.module.js"}}</script>
+<script type="module">
+import { createOrbitHeart, LOOP } from './orbit-heart.js';
+const gift = createOrbitHeart(document.getElementById('c'), { size: 1024 });
+window.gift = gift;
+gift.setMode('beauty');
+const t0 = performance.now();
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+(function tick(now){
+  gift.setTime(reduce ? 0.2 : ((now - t0) / 1000) % LOOP);
+  gift.render();
+  requestAnimationFrame(tick);
+})(t0);
+</script>
+</body>
+</html>
