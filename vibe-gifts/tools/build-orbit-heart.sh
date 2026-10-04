@@ -25,7 +25,7 @@ for f in "$W"/loop_c/[0-9][0-9][0-9].png; do b=$(basename "$f" .png); mv "$f" "$
 
 ffmpeg -y -loglevel error -framerate 30 -i "$W/loop_c/a_%03d.png" -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 26 -auto-alt-ref 0 "$OUT/orbit-heart_loop_1024_alpha.webm"
 # Telegram video-sticker spec: WebM VP9 alpha, 512 px, <=3 s, 30 fps, <=256 KB
-ffmpeg -y -loglevel error -framerate 30 -i "$W/loop_c/a_%03d.png" -vf scale=512:512:flags=lanczos -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 0 -crf 40 -an -auto-alt-ref 0 "$OUT/orbit-heart_telegram_512.webm"
+ffmpeg -y -loglevel error -framerate 30 -i "$W/loop_c/a_%03d.png" -vf scale=512:512:flags=lanczos -c:v libvpx-vp9 -pix_fmt yuva420p -b:v 330k -maxrate 330k -bufsize 330k -crf 52 -deadline good -cpu-used 1 -an -auto-alt-ref 0 "$OUT/orbit-heart_telegram_512.webm"
 ffmpeg -y -loglevel error -framerate 30 -i "$W/loop/beauty_%03d.png" -c:v libx264 -pix_fmt yuv420p -crf 14 -movflags +faststart "$OUT/orbit-heart_loop_1024_dark.mp4"
 cp "$W/loop_c/a_000.png" "$OUT/orbit-heart_frame_000.png"
 ls -la "$OUT" "$OUT/layers"
