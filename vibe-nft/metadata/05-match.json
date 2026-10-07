@@ -1,0 +1,51 @@
+{
+  "name": "Match #005",
+  "description": "Two crystals that fit only each other. When they touch, the light appears.",
+  "image": "<UPLOAD_BASE_URI>/05-match/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Twin Crystals"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Dating"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Iridescent Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Champagne Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Soft Lavender"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Recognition"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Mutual"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Light Bridge"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

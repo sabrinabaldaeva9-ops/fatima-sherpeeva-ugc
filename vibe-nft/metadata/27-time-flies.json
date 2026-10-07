@@ -1,0 +1,51 @@
+{
+  "name": "Time Flies With You #027",
+  "description": "An hourglass of pink glitter sand that settles into a heart. Time flies with you.",
+  "image": "<UPLOAD_BASE_URI>/27-time-flies/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Hourglass"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Memories"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Optical Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Dusty Pink"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Presence"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Time Together"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Sand Flow"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

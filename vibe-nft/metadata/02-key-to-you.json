@@ -1,0 +1,53 @@
+{
+  "name": "Key to You #002",
+  "description": "A rose-gold key with a crystal heart — for the person who unlocked something real.",
+  "image": "<UPLOAD_BASE_URI>/02-key-to-you/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Key"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Secret Symbols"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Pink Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Trust"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Trust"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Inner Glow"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ],
+  "content_url": "<UPLOAD_BASE_URI>/02-key-to-you/animation_1000.mp4",
+  "content_type": "video/mp4"
+}

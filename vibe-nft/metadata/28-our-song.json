@@ -1,0 +1,51 @@
+{
+  "name": "Our Song #028",
+  "description": "A lavender music box with a turning crystal heart. It only plays your song.",
+  "image": "<UPLOAD_BASE_URI>/28-our-song/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Music Box"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Music"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Glossy Enamel"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Soft Lavender"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Romance"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Shared Taste"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Rotation"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

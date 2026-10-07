@@ -1,0 +1,53 @@
+{
+  "name": "Vibe Heart #001",
+  "description": "A designer crystal pendant with its own light inside — for two people on the same wavelength.",
+  "image": "<UPLOAD_BASE_URI>/01-vibe-heart/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Pendant"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Jewelry"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Pink Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Dusty Pink"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Tenderness"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Same Wavelength"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Heartbeat Glow"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ],
+  "content_url": "<UPLOAD_BASE_URI>/01-vibe-heart/animation_1000.mp4",
+  "content_type": "video/mp4"
+}

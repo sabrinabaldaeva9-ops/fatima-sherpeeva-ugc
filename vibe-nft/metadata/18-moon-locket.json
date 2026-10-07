@@ -1,0 +1,51 @@
+{
+  "name": "Moon Locket #018",
+  "description": "A pearl crescent locket hiding two stars. Same moon, same night.",
+  "image": "<UPLOAD_BASE_URI>/18-moon-locket/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Locket"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Moon"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Pearlescent"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Champagne Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Pearl White"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Longing"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Night Talks"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Opening"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Night Line #012",
+  "description": "A glass handset with a cord coiled into a heart. For the talks that last until 3 a.m.",
+  "image": "<UPLOAD_BASE_URI>/12-night-line/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Phone Handset"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Night Conversations"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Lavender Glass"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Soft Lavender"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Intimacy"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Night Talks"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Pulse"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

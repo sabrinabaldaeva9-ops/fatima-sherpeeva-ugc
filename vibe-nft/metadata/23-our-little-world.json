@@ -1,0 +1,51 @@
+{
+  "name": "Our Little World #023",
+  "description": "A crystal globe with a bench, a lamp and two lights. A world just big enough for two.",
+  "image": "<UPLOAD_BASE_URI>/23-our-little-world/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Snow Globe"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Memories"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Optical Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Icy Blue"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Belonging"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Memories"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Snowfall"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

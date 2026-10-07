@@ -1,0 +1,10 @@
+{
+  "name": "VIBE — Real Connections Only",
+  "description": "VIBE Genesis: 30 one-of-one romantic collectibles by the Vibe dating app. Rose gold, crystal, pearl and satin objects made to be given to someone you like — symbols of mutual sympathy, trust and real human connection. Real connections only.",
+  "image": "<UPLOAD_BASE_URI>/collection/avatar_1000.png",
+  "cover_image": "<UPLOAD_BASE_URI>/collection/cover_2400x800.png",
+  "social_links": [
+    "<VIBE_WEBSITE_URL>",
+    "<VIBE_TELEGRAM_URL>"
+  ]
+}

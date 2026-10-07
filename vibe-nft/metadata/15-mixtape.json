@@ -1,0 +1,51 @@
+{
+  "name": "Mixtape #015",
+  "description": "A translucent cassette with a heart-shaped reel. Made for one person only.",
+  "image": "<UPLOAD_BASE_URI>/15-mixtape/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Cassette"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Music"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Translucent Acrylic"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Soft Lavender"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Nostalgia"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Shared Taste"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Spin"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

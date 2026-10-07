@@ -1,0 +1,51 @@
+{
+  "name": "Love Lock #003",
+  "description": "A pink crystal padlock with a floating heart — a promise you close together.",
+  "image": "<UPLOAD_BASE_URI>/03-love-lock/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Padlock"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Connection"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Pink Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Dusty Pink"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Safety"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Commitment"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Opening"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

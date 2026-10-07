@@ -1,0 +1,51 @@
+{
+  "name": "Love Note #009",
+  "description": "A folded note with one embossed heart. Open it slowly.",
+  "image": "<UPLOAD_BASE_URI>/09-love-note/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Folded Note"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Messages"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Pearl Paper"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "None"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Soft Lavender"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Sweetness"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "First Words"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Unfolding"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

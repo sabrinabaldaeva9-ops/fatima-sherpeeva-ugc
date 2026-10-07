@@ -1,0 +1,51 @@
+{
+  "name": "Vibe Ring #006",
+  "description": "A rose-gold ring with a crystal heart floating above it — a light promise that still means it.",
+  "image": "<UPLOAD_BASE_URI>/06-vibe-ring/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Ring"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Jewelry"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Pink Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Devotion"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Promise"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Levitation"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

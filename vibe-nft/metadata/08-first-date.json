@@ -1,0 +1,51 @@
+{
+  "name": "First Date #008",
+  "description": "A tiny café table for two. The steam already knows.",
+  "image": "<UPLOAD_BASE_URI>/08-first-date/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Café Table"
+    },
+    {
+      "trait_type": "Category",
+      "value": "First Meeting"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Glossy Ceramic"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Champagne Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Pearl White"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Nervous Joy"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "First Meeting"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Steam Heart"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

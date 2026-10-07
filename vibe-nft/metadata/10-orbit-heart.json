@@ -1,0 +1,53 @@
+{
+  "name": "Orbit Heart #010",
+  "description": "The hero of the Vibe collection: an iridescent glass heart pierced by a rose-gold orbit. Real connections only.",
+  "image": "<UPLOAD_BASE_URI>/10-orbit-heart/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Orbit Heart"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Connection"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Iridescent Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Soft Lavender"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Gravity"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Same Wavelength"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Orbit"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ],
+  "content_url": "<UPLOAD_BASE_URI>/10-orbit-heart/animation_1000.mp4",
+  "content_type": "video/mp4"
+}

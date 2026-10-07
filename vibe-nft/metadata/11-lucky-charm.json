@@ -1,0 +1,51 @@
+{
+  "name": "Lucky Charm #011",
+  "description": "A four-leaf clover made of four tiny hearts. Luck, but make it romantic.",
+  "image": "<UPLOAD_BASE_URI>/11-lucky-charm/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Clover Charm"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Luck"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Glossy Enamel"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Soft Mint"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Hope"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "First Spark"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Spin"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

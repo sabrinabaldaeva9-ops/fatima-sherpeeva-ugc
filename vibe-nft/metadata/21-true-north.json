@@ -1,0 +1,51 @@
+{
+  "name": "True North #021",
+  "description": "A crystal compass whose needle ends in a heart. It always points to you.",
+  "image": "<UPLOAD_BASE_URI>/21-true-north/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Compass"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Travel"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Optical Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Champagne Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Champagne"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Certainty"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Direction"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Needle Seek"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Shooting Star #017",
+  "description": "A crystal star with a golden trail. Make a wish.",
+  "image": "<UPLOAD_BASE_URI>/17-shooting-star/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Shooting Star"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Stars"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Iridescent Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Champagne Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Champagne"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Wonder"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Wish"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Trail"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

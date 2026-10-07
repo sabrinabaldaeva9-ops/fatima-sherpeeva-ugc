@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibe NFT Viewer</title>
+<style>
+  :root { --bg:#070407; --ink:#f8f4f1; --mute:#a8919f; --rg:#f0bba8; }
+  * { box-sizing:border-box; margin:0 }
+  html,body { min-height:100%; background:var(--bg); color:var(--ink); font-family:Inter,system-ui,-apple-system,sans-serif }
+  main { min-height:100vh; display:grid; place-items:center; padding:24px 16px; gap:16px }
+  .stage { width:min(92vw,80vh,760px); aspect-ratio:1; border-radius:28px; overflow:hidden; box-shadow:0 40px 120px #000c, inset 0 0 0 1px #ffffff14 }
+  canvas { width:100%; height:100%; display:block }
+  nav { display:flex; gap:8px; flex-wrap:wrap; justify-content:center }
+  nav a { color:var(--mute); text-decoration:none; font-size:13px; letter-spacing:.08em; text-transform:uppercase; padding:8px 14px; border:1px solid #ffffff1a; border-radius:99px }
+  nav a[aria-current] { color:var(--rg); border-color:#f0bba866 }
+</style>
+</head>
+<body>
+<main>
+  <div class="stage"><canvas id="c" width="1024" height="1024"></canvas></div>
+  <nav>
+    <a href="?nft=10-orbit-heart">10 Orbit Heart</a>
+    <a href="?nft=01-vibe-heart">01 Vibe Heart</a>
+    <a href="?nft=02-key-to-you">02 Key to You</a>
+  </nav>
+</main>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<script type="module">
+import { createGift } from './studio.js';
+const id = new URLSearchParams(location.search).get('nft') || '10-orbit-heart';
+document.querySelector(`nav a[href="?nft=${id}"]`)?.setAttribute('aria-current', 'page');
+const def = await import(`./objects/${id}.js`);
+const gift = await createGift(document.getElementById('c'), def, { size: 1024 });
+window.gift = gift;
+if (!navigator.webdriver) {
+  const t0 = performance.now();
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function tick(now) {
+    gift.setTime(still ? 0.12 : ((now - t0) / 1000) % gift.LOOP);
+    gift.render();
+    requestAnimationFrame(tick);
+  })(t0);
+}
+</script>
+</body>
+</html>

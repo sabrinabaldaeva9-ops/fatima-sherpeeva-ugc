@@ -1,0 +1,51 @@
+{
+  "name": "Chemistry #013",
+  "description": "A glass flask where two colours meet and become one bubble. Chemistry, obviously.",
+  "image": "<UPLOAD_BASE_URI>/13-chemistry/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Flask"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Chemistry"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Liquid Glass"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Champagne Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Dusty Pink"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Attraction"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Chemistry"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Liquid Merge"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

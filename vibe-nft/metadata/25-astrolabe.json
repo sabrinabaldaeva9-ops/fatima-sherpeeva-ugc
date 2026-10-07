@@ -1,0 +1,51 @@
+{
+  "name": "Astrolabe of Us #025",
+  "description": "An armillary sphere of rose-gold rings around a crystal heart. The stars align — on schedule.",
+  "image": "<UPLOAD_BASE_URI>/25-astrolabe/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Astrolabe"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Stars"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Iridescent Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Deep Plum"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Destiny"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Destiny"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Rings Rotation"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

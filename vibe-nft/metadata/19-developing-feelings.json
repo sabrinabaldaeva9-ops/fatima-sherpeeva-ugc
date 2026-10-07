@@ -1,0 +1,51 @@
+{
+  "name": "Developing Feelings #019",
+  "description": "An instant photo where two hearts slowly develop. Some feelings need a moment.",
+  "image": "<UPLOAD_BASE_URI>/19-developing-feelings/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Instant Photo"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Photography"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Pearl Paper"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Dusty Pink"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Nostalgia"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Memories"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Developing"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

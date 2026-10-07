@@ -1,0 +1,51 @@
+{
+  "name": "Dance With Me #026",
+  "description": "A lavender mirror ball with one heart-shaped tile. The night you met.",
+  "image": "<UPLOAD_BASE_URI>/26-dance-with-me/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Mirror Ball"
+    },
+    {
+      "trait_type": "Category",
+      "value": "First Meeting"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Lavender Glass"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Silver Chrome"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Lilac"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Joy"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "First Meeting"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Light Spots"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

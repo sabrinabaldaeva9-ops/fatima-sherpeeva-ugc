@@ -1,0 +1,51 @@
+{
+  "name": "Take Me With You #020",
+  "description": "An enamel luggage tag on a satin ribbon. Anywhere, as long as it's together.",
+  "image": "<UPLOAD_BASE_URI>/20-take-me-with-you/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Luggage Tag"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Travel"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Glossy Enamel"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Lilac"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Adventure"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Plans Together"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Swing"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

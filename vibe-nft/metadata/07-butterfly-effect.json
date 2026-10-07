@@ -1,0 +1,51 @@
+{
+  "name": "Butterfly Effect #007",
+  "description": "A crystal butterfly. One small hello can change everything.",
+  "image": "<UPLOAD_BASE_URI>/07-butterfly-effect/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Butterfly"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Attraction"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Iridescent Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Soft Mint"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Excitement"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "First Spark"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Particles"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

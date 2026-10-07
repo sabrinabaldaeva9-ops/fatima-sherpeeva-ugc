@@ -1,0 +1,51 @@
+{
+  "name": "Fortune Cookie #024",
+  "description": "A porcelain fortune cookie. Your fortune: them.",
+  "image": "<UPLOAD_BASE_URI>/24-fortune-cookie/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Fortune Cookie"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Luck"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Glossy Ceramic"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Champagne Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Champagne"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Playfulness"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "First Spark"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Reveal"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

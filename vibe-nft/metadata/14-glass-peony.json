@@ -1,0 +1,51 @@
+{
+  "name": "Glass Peony #014",
+  "description": "A peony of glass petals that never fades.",
+  "image": "<UPLOAD_BASE_URI>/14-glass-peony/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Flower"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Flowers"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Pink Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Champagne Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Dusty Pink"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Admiration"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Courtship"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Blooming"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

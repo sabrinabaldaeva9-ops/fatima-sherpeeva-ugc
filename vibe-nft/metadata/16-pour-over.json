@@ -1,0 +1,51 @@
+{
+  "name": "Pour Over #016",
+  "description": "A pearl ceramic dripper and one heart-shaped drop. Good things take time.",
+  "image": "<UPLOAD_BASE_URI>/16-pour-over/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Coffee Dripper"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Coffee"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Glossy Ceramic"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Champagne Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Pearl White"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Comfort"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Slow Dating"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Liquid Drop"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}

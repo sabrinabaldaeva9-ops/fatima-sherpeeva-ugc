@@ -1,0 +1,51 @@
+{
+  "name": "Thread of Fate #030",
+  "description": "Two rose-gold rings tied by a glowing satin thread. It can stretch and tangle — but never breaks.",
+  "image": "<UPLOAD_BASE_URI>/30-thread-of-fate/marketplace_1000.png",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Object",
+      "value": "Twin Rings & Thread"
+    },
+    {
+      "trait_type": "Category",
+      "value": "Connection"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Satin & Crystal"
+    },
+    {
+      "trait_type": "Metal",
+      "value": "Rose Gold"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Lilac"
+    },
+    {
+      "trait_type": "Emotion",
+      "value": "Destiny"
+    },
+    {
+      "trait_type": "Connection Type",
+      "value": "Destiny"
+    },
+    {
+      "trait_type": "Effect",
+      "value": "Glowing Thread"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis 1/1"
+    },
+    {
+      "trait_type": "Season",
+      "value": "Genesis"
+    }
+  ]
+}
