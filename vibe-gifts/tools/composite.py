@@ -23,6 +23,13 @@ for mp in sorted(glob.glob(os.path.join(src, 'mask_*.png'))):
     fc = fx[..., :3]
     oa = a + fa * (1 - a)
     oc = (fg * a + fc * fa * (1 - a)) / np.maximum(oa, 1e-4)
+    sp_path = os.path.join(src, f'spark_{tag}.png')
+    if os.path.exists(sp_path):  # star flares: additive light on top of everything
+        sp = ld(sp_path)
+        sa = sp[..., 3:4]
+        prem = oc * oa + sp[..., :3] * sa
+        oa = np.clip(oa + sa * (1 - oa), 0, 1)
+        oc = prem / np.maximum(oa, 1e-4)
     out = np.concatenate([oc, oa], -1).clip(0, 1)
     Image.fromarray((out * 255 + 0.5).astype(np.uint8), 'RGBA').save(os.path.join(dst, f'{tag}.png'))
     Image.fromarray((np.concatenate([fg, a], -1).clip(0, 1) * 255 + .5).astype(np.uint8), 'RGBA').save(os.path.join(dst, f'{tag}_body.png'))

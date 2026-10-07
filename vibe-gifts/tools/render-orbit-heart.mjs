@@ -31,8 +31,8 @@ const browser = await chromium.launch({
 const page = await browser.newPage({ viewport: { width: 800, height: 800 } });
 page.on('console', (m) => ['error', 'warning'].includes(m.type()) && console.log('[page]', m.text()));
 page.on('pageerror', (e) => console.log('[pageerror]', e.message));
-await page.goto(`http://localhost:${port}/orbit-heart/preview.html${process.env.QS || ''}`);
-await page.waitForFunction(() => window.gift);
+await page.goto(`http://localhost:${port}/orbit-heart/${process.env.PAGE || 'preview.html'}${process.env.QS || ''}`);
+await page.waitForFunction(() => window.gift, null, { timeout: 120000 });
 await page.evaluate((s) => window.gift.resize(s), SIZE);
 const LOOP = await page.evaluate(() => window.gift.LOOP);
 
@@ -45,7 +45,7 @@ async function grab(mode, t, lyr) {
 }
 
 const n = frames === 'still' ? 1 : +frames;
-const modes = ['beauty', 'body', 'plate', 'mask', 'fx'];
+const modes = ['beauty', 'body', 'plate', 'mask', 'fx', ...(process.env.SPARK ? ['spark'] : [])];
 for (let i = 0; i < n; i++) {
   const t = frames === 'still' ? 0.12 : (i / n) * LOOP; // 0.12s ≈ first heartbeat peak
   const tag = frames === 'still' ? 'still' : String(i).padStart(3, '0');

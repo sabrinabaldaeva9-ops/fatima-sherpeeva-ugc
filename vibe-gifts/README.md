@@ -8,6 +8,7 @@
 | [`CATALOG.md`](CATALOG.md) | 30 gifts: силуэт, концепция, объект, материалы, палитра, анимация, эмоция, цена в ★, сезонные варианты |
 | [`catalog.json`](catalog.json) | то же, машинно (для карточек/бота — текст *не* в картинке) |
 | `orbit-heart/` | **01 Orbit Heart** — hero-gift: 3D-сцена, превью, экспорты |
+| `orbit-heart/*-charm*` | Orbit Heart в стиле **Charm** (rose gold · jelly · satin bow) — см. раздел 14 Design System |
 
 ## Orbit Heart — что получилось
 

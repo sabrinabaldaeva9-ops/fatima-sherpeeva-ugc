@@ -20,7 +20,7 @@ const C = {
 };
 
 // ---------- geometry ----------
-function heartPoints(n = 240, width = 2.3, facets = 0) {
+export function heartPoints(n = 240, width = 2.3, facets = 0) {
   let p = [];
   for (let i = 0; i < n; i++) {
     const t = (i / n) * TAU;
@@ -43,7 +43,7 @@ function heartPoints(n = 240, width = 2.3, facets = 0) {
   return p;
 }
 
-function heartGeometry({ depth = 0.3, bevel = 0.42, size = 0.16, scale = 1, facets = 0, segs = 18 } = {}) {
+export function heartGeometry({ depth = 0.3, bevel = 0.42, size = 0.16, scale = 1, facets = 0, segs = 18 } = {}) {
   const shape = new THREE.Shape(heartPoints(240, 2.3, facets));
   let g = new THREE.ExtrudeGeometry(shape, {
     depth,
@@ -149,7 +149,7 @@ function studioEnv(renderer) {
   return rt.texture;
 }
 
-function radialTexture(stops, size = 512) {
+export function radialTexture(stops, size = 512) {
   const c = document.createElement('canvas');
   c.width = c.height = size;
   const g = c.getContext('2d');
