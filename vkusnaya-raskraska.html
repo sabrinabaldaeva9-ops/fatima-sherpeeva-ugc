@@ -1,0 +1,263 @@
+<title>Вкусная раскраска</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: стикер-страница. Слева лист для раскрашивания, справа палитра и «почему это полезно».
+   Сознательно один яркий светлый вид: детская раскраска, бумага всегда белая. */
+:root{
+  --sky:#D9F0FF; --sun:#FFD23F; --tomato:#FF5A4F; --leaf:#2E9E4F; --ink:#2B2438; --paper:#FFFFFF;
+  --ink-soft:#5B5470;
+  --f-display:'Comfortaa','Nunito',system-ui,sans-serif;
+  --f-body:'Nunito',system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--sky);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.5;
+  padding-block:0 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:4px solid var(--tomato);outline-offset:3px}
+
+header{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between;padding-block:22px 14px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand svg{flex:none}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,5vw,40px);line-height:1.1;margin:0;text-wrap:balance}
+.sub{margin:2px 0 0;color:var(--ink-soft);font-weight:700;font-size:15px}
+
+.age{display:flex;gap:6px;padding:6px;background:var(--paper);border:3px solid var(--ink);border-radius:999px}
+.age button{border:0;background:transparent;padding:8px 18px;border-radius:999px;font-weight:800;font-size:16px}
+.age button[aria-pressed="true"]{background:var(--ink);color:#fff}
+
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-block:6px 18px}
+.tab{display:flex;align-items:center;gap:10px;background:var(--paper);border:3px solid var(--ink);border-radius:18px;padding:8px 16px 8px 10px;
+  font-weight:800;box-shadow:0 4px 0 var(--ink);transition:transform .12s}
+.tab:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.tab i{width:30px;height:30px;border-radius:50%;border:3px solid var(--ink);display:block}
+.tab[aria-selected="true"]{background:var(--sun)}
+
+.stage{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px;align-items:start}
+.paper{background:var(--paper);border:4px solid var(--ink);border-radius:26px;box-shadow:8px 8px 0 var(--ink);padding:10px}
+.paper svg{display:block;width:100%;height:auto;touch-action:manipulation}
+.paper .r{fill:#fff;stroke:var(--ink);stroke-width:5;stroke-linejoin:round;stroke-linecap:round;cursor:pointer;transition:fill .15s}
+.paper .r:hover{filter:brightness(.96)}
+.paper .l{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;pointer-events:none}
+.paper .dot{fill:var(--ink);pointer-events:none}
+.stage[data-age="3"] .d5{display:none}
+.sheet[hidden],.fact[hidden]{display:none}
+
+.side{display:flex;flex-direction:column;gap:20px;min-width:0}
+.panel{background:var(--paper);border:4px solid var(--ink);border-radius:22px;padding:18px}
+h2{font-family:var(--f-display);font-size:21px;margin:0 0 10px;line-height:1.2;text-wrap:balance}
+.palette{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.sw{aspect-ratio:1;border-radius:50%;border:3px solid var(--ink);padding:0;position:relative;transition:transform .12s}
+.sw:hover{transform:scale(1.08)}
+.sw[aria-checked="true"]{transform:scale(1.18);box-shadow:0 0 0 4px var(--paper),0 0 0 8px var(--tomato)}
+.sw.eraser{background:repeating-linear-gradient(45deg,#fff 0 6px,#e8e4ef 6px 12px)}
+.now{margin:14px 0 0;font-weight:800}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.btn{border:3px solid var(--ink);background:var(--paper);border-radius:14px;padding:8px 14px;font-weight:800;box-shadow:0 3px 0 var(--ink)}
+.btn.main{background:var(--tomato);color:#fff}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--ink)}
+
+.fact{background:var(--sun);border:4px solid var(--ink);border-radius:22px;padding:18px 20px;box-shadow:6px 6px 0 var(--ink)}
+.fact h2{display:flex;gap:10px;align-items:center}
+.fact p{margin:0 0 10px;max-width:46ch}
+.fact .big{font-size:19px;font-weight:700}
+.task{background:var(--paper);border:3px dashed var(--ink);border-radius:14px;padding:10px 14px;margin:14px 0 0;font-weight:700}
+.stage[data-age="3"] .t5,.stage[data-age="5"] .t3{display:none}
+.word{font-family:var(--f-display);font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 4px}
+
+@media(max-width:820px){.stage{grid-template-columns:1fr}.paper{box-shadow:5px 5px 0 var(--ink)}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="brand">
+    <svg width="54" height="54" viewBox="0 0 54 54" aria-hidden="true"><circle cx="27" cy="29" r="20" fill="#FF5A4F" stroke="#2B2438" stroke-width="4"/><path d="M27 12c0-5 3-8 8-9-1 5-3 8-8 9z" fill="#2E9E4F" stroke="#2B2438" stroke-width="3" stroke-linejoin="round"/><circle cx="20" cy="28" r="2.6" fill="#2B2438"/><circle cx="34" cy="28" r="2.6" fill="#2B2438"/><path d="M21 36q6 6 12 0" fill="none" stroke="#2B2438" stroke-width="3" stroke-linecap="round"/></svg>
+    <div>
+      <h1>Вкусная раскраска</h1>
+      <p class="sub">Раскрась овощ или фрукт и узнай, чем он полезен</p>
+    </div>
+  </div>
+  <div class="age" role="group" aria-label="Возраст">
+    <button type="button" id="age3" aria-pressed="true">От 3 лет</button>
+    <button type="button" id="age5" aria-pressed="false">От 5 лет</button>
+  </div>
+</header>
+
+<div class="tabs" role="tablist" aria-label="Выбери картинку">
+  <button class="tab" role="tab" data-i="0" aria-selected="true"><i style="background:#FF8A1F"></i>Морковка</button>
+  <button class="tab" role="tab" data-i="1" aria-selected="false"><i style="background:#E53935"></i>Яблоко</button>
+  <button class="tab" role="tab" data-i="2" aria-selected="false"><i style="background:#2E9E4F"></i>Брокколи</button>
+  <button class="tab" role="tab" data-i="3" aria-selected="false"><i style="background:#FFD23F"></i>Банан</button>
+</div>
+
+<main class="stage" id="stage" data-age="3">
+  <div class="paper">
+    <!-- МОРКОВКА -->
+    <section class="sheet" data-i="0" aria-label="Раскраска: морковка">
+      <svg viewBox="0 0 400 420">
+        <circle class="r d5" cx="330" cy="72" r="36" data-c="#FFD23F" data-pre="#FFD23F"/>
+        <path class="r d5" d="M45 100q0-32 36-28 10-26 46-10 36-6 36 26 0 18-20 18H65q-20 0-20-6z" data-c="#8FD3FF"/>
+        <ellipse class="r d5" cx="200" cy="388" rx="125" ry="18" data-c="#8B5E3C"/>
+        <path class="r" d="M195 152Q140 112 128 58Q175 66 198 140z" data-c="#2E9E4F" data-pre="#2E9E4F"/>
+        <path class="r" d="M205 152Q260 112 272 58Q225 66 202 140z" data-c="#2E9E4F" data-pre="#2E9E4F"/>
+        <path class="r" d="M200 148Q178 82 200 30Q224 82 204 148z" data-c="#8BC34A" data-pre="#8BC34A"/>
+        <path class="r" d="M160 140Q200 120 240 140Q264 215 212 372Q200 394 188 372Q136 215 160 140z" data-c="#FF8A1F"/>
+        <path class="l d5" d="M170 180h16M216 250h18M180 290h14"/>
+        <circle class="dot" cx="184" cy="208" r="6"/><circle class="dot" cx="216" cy="208" r="6"/>
+        <path class="l" d="M186 228Q200 244 214 228"/>
+        <circle class="r d5" cx="168" cy="230" r="9" data-c="#FF9EB5"/><circle class="r d5" cx="232" cy="230" r="9" data-c="#FF9EB5"/>
+      </svg>
+    </section>
+    <!-- ЯБЛОКО -->
+    <section class="sheet" data-i="1" aria-label="Раскраска: яблоко" hidden>
+      <svg viewBox="0 0 400 420">
+        <circle class="r d5" cx="70" cy="70" r="34" data-c="#FFD23F"/>
+        <path class="r d5" d="M255 80q0-30 34-26 10-24 44-10 34-5 34 24 0 18-20 18h-72q-20 0-20-6z" data-c="#8FD3FF"/>
+        <ellipse class="r d5" cx="200" cy="360" rx="130" ry="16" data-c="#8BC34A"/>
+        <path class="r" d="M200 130C150 100 90 140 100 218C108 296 160 336 200 324C240 336 292 296 300 218C310 140 250 100 200 130z" data-c="#E53935" data-pre="#E53935"/>
+        <path class="r" d="M196 128Q198 96 210 72L224 78Q214 98 214 128z" data-c="#8B5E3C"/>
+        <path class="r" d="M214 112Q244 64 292 74Q282 122 220 124z" data-c="#2E9E4F"/>
+        <path class="r d5" d="M122 190Q128 156 160 142Q140 164 140 200z" data-c="#FFD1D1"/>
+        <circle class="dot" cx="168" cy="220" r="6"/><circle class="dot" cx="232" cy="220" r="6"/>
+        <path class="l" d="M180 246Q200 266 220 246"/>
+        <circle class="r d5" cx="146" cy="248" r="10" data-c="#FF9EB5"/><circle class="r d5" cx="254" cy="248" r="10" data-c="#FF9EB5"/>
+      </svg>
+    </section>
+    <!-- БРОККОЛИ -->
+    <section class="sheet" data-i="2" aria-label="Раскраска: брокколи" hidden>
+      <svg viewBox="0 0 400 420">
+        <circle class="r d5" cx="330" cy="70" r="34" data-c="#FFD23F"/>
+        <ellipse class="r d5" cx="200" cy="392" rx="125" ry="16" data-c="#8B5E3C"/>
+        <path class="r" d="M162 240Q154 340 172 372Q200 388 228 372Q246 340 238 240z" data-c="#9CCC65"/>
+        <path class="l d5" d="M182 330v22M218 320v26"/>
+        <circle class="r" cx="140" cy="205" r="56" data-c="#2E9E4F"/>
+        <circle class="r" cx="262" cy="205" r="56" data-c="#2E9E4F"/>
+        <circle class="r" cx="200" cy="228" r="48" data-c="#2E9E4F"/>
+        <circle class="r" cx="200" cy="160" r="62" data-c="#2E9E4F" data-pre="#2E9E4F"/>
+        <circle class="r d5" cx="100" cy="150" r="30" data-c="#4CAF50"/>
+        <circle class="r d5" cx="300" cy="150" r="30" data-c="#4CAF50"/>
+        <circle class="r d5" cx="150" cy="100" r="30" data-c="#4CAF50"/>
+        <circle class="r d5" cx="252" cy="100" r="30" data-c="#4CAF50"/>
+        <circle class="dot" cx="184" cy="300" r="6"/><circle class="dot" cx="216" cy="300" r="6"/>
+        <path class="l" d="M188 320Q200 334 212 320"/>
+      </svg>
+    </section>
+    <!-- БАНАН -->
+    <section class="sheet" data-i="3" aria-label="Раскраска: банан" hidden>
+      <svg viewBox="0 0 400 420">
+        <circle class="r d5" cx="320" cy="76" r="34" data-c="#FFD23F"/>
+        <path class="r d5" d="M130 372q0-26 30-24 10-20 38-8 30-4 30 20 0 14-16 14H146q-16 0-16-2z" data-c="#8FD3FF"/>
+        <path class="r" d="M85 120Q95 300 250 316Q330 322 356 270Q346 262 336 268Q300 286 250 270Q150 242 130 110Q105 100 85 120z" data-c="#FFD23F" data-pre="#FFD23F"/>
+        <path class="r" d="M85 120Q105 100 130 110L128 82Q105 74 92 88z" data-c="#6D4C41"/>
+        <path class="l d5" d="M112 150Q130 270 250 298"/>
+        <circle class="dot" cx="226" cy="290" r="6"/><circle class="dot" cx="262" cy="292" r="6"/>
+        <path class="l" d="M236 302Q246 312 258 302"/>
+        <circle class="r d5" cx="290" cy="150" r="13" data-c="#FF8FB1"/>
+        <circle class="r d5" cx="240" cy="110" r="13" data-c="#42A5F5"/>
+        <circle class="r d5" cx="336" cy="210" r="13" data-c="#9C6ADE"/>
+      </svg>
+    </section>
+  </div>
+
+  <div class="side">
+    <div class="panel">
+      <h2>Выбери цвет</h2>
+      <div class="palette" role="radiogroup" aria-label="Цвета" id="palette"></div>
+      <p class="now" id="now">Цвет: оранжевый</p>
+      <div class="actions">
+        <button class="btn main" type="button" id="magic">Раскрасить как в жизни</button>
+        <button class="btn" type="button" id="clear">Начать заново</button>
+      </div>
+    </div>
+
+    <div class="fact" data-i="0">
+      <p class="word">Знаешь ли ты?</p>
+      <h2>Морковка помогает глазам</h2>
+      <p class="big">В морковке есть вещество, из которого в организме получается витамин А. Он нужен, чтобы хорошо видеть.</p>
+      <p>Морковку хрустко грызть: так работают зубы и челюсти. Её можно есть сырой, тёртой или в супе.</p>
+      <p class="task t3">Нажми на оранжевый кружок и раскрась морковку.</p>
+      <p class="task t5">Задание: раскрась морковку и найди на картинке солнце, облако и щёчки.</p>
+    </div>
+    <div class="fact" data-i="1" hidden>
+      <p class="word">Знаешь ли ты?</p>
+      <h2>Яблоко помогает животику</h2>
+      <p class="big">В яблоке много клетчатки. Она помогает еде бодро двигаться по животику.</p>
+      <p>Ещё в яблоке есть витамин С, который помогает меньше болеть. Хорошо вымой яблоко и ешь вместе с кожурой: в ней много полезного.</p>
+      <p class="task t3">Раскрась яблоко красным, а листик зелёным.</p>
+      <p class="task t5">Задание: раскрась яблоко, листик и веточку. Придумай яблоку весёлое имя.</p>
+    </div>
+    <div class="fact" data-i="2" hidden>
+      <p class="word">Знаешь ли ты?</p>
+      <h2>Брокколи даёт силы</h2>
+      <p class="big">Брокколи похожа на маленькое дерево. В ней много витамина С и витамина К. Они помогают расти и укреплять косточки.</p>
+      <p>Брокколи вкуснее, если не варить её долго: пусть остаётся яркой и чуть хрустящей.</p>
+      <p class="task t3">Раскрась зелёные «деревья» и светлую ножку.</p>
+      <p class="task t5">Задание: раскрась брокколи разными оттенками зелёного. Сколько кудрявых шариков ты нашёл?</p>
+    </div>
+    <div class="fact" data-i="3" hidden>
+      <p class="word">Знаешь ли ты?</p>
+      <h2>Банан — энергия для игр</h2>
+      <p class="big">В банане есть калий. Он помогает мышцам и сердцу работать, когда ты бегаешь и прыгаешь.</p>
+      <p>Банан сладкий и мягкий, его легко взять с собой на прогулку. Кожуру перед едой нужно снять.</p>
+      <p class="task t3">Раскрась банан жёлтым, а кончик коричневым.</p>
+      <p class="task t5">Задание: раскрась банан и три цветные звёздочки вокруг него.</p>
+    </div>
+  </div>
+</main>
+</div>
+
+<script>
+(function(){
+  var colors=[["#E53935","красный"],["#FF8A1F","оранжевый"],["#FFD23F","жёлтый"],["#8BC34A","салатовый"],["#2E9E4F","зелёный"],["#42A5F5","голубой"],
+              ["#3F51B5","синий"],["#9C6ADE","фиолетовый"],["#FF8FB1","розовый"],["#8B5E3C","коричневый"],["#2B2438","чёрный"],["#FFFFFF","ластик"]];
+  var cur="#FF8A1F";
+  var pal=document.getElementById("palette"), now=document.getElementById("now");
+  colors.forEach(function(c){
+    var b=document.createElement("button");
+    b.type="button"; b.className="sw"+(c[1]==="ластик"?" eraser":""); b.setAttribute("role","radio");
+    b.setAttribute("aria-label",c[1]); b.setAttribute("aria-checked",c[0]===cur?"true":"false"); b.dataset.c=c[0]; b.dataset.n=c[1];
+    if(c[1]!=="ластик") b.style.background=c[0];
+    b.onclick=function(){
+      cur=c[0];
+      pal.querySelectorAll(".sw").forEach(function(s){s.setAttribute("aria-checked",s===b?"true":"false")});
+      now.textContent=c[1]==="ластик"?"Ластик: стирает цвет":"Цвет: "+c[1];
+    };
+    pal.appendChild(b);
+  });
+
+  document.querySelectorAll(".paper svg").forEach(function(svg){
+    svg.addEventListener("click",function(e){
+      var r=e.target.closest(".r"); if(r) r.style.fill=cur;
+    });
+    svg.querySelectorAll("[data-pre]").forEach(function(r){r.style.fill=r.dataset.pre});
+  });
+
+  var stage=document.getElementById("stage");
+  function setAge(a){
+    stage.dataset.age=a;
+    document.getElementById("age3").setAttribute("aria-pressed",a==="3");
+    document.getElementById("age5").setAttribute("aria-pressed",a==="5");
+  }
+  document.getElementById("age3").onclick=function(){setAge("3")};
+  document.getElementById("age5").onclick=function(){setAge("5")};
+
+  var tabs=document.querySelectorAll(".tab");
+  function show(i){
+    tabs.forEach(function(t){t.setAttribute("aria-selected",t.dataset.i===i?"true":"false")});
+    document.querySelectorAll(".sheet,.fact").forEach(function(el){el.hidden=el.dataset.i!==i});
+  }
+  tabs.forEach(function(t){t.onclick=function(){show(t.dataset.i)}});
+  function active(){return document.querySelector(".sheet:not([hidden]) svg")}
+  document.getElementById("magic").onclick=function(){
+    active().querySelectorAll("[data-c]").forEach(function(r){r.style.fill=r.dataset.c});
+  };
+  document.getElementById("clear").onclick=function(){
+    active().querySelectorAll(".r").forEach(function(r){r.style.fill="#fff"});
+  };
+})();
+</script>
